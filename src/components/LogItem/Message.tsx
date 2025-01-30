@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, memo } from 'react';
-import JsonView from 'react18-json-view';
-import 'react18-json-view/src/style.css'
+import React, { useEffect, useRef, memo } from "react";
+import JsonView from "react18-json-view";
+import "react18-json-view/src/style.css";
 
 const styles = `
   :host {
@@ -17,13 +17,13 @@ const styles = `
 const isJSON = (str) => {
   try {
     const result = JSON.parse(str);
-    return typeof result === 'object';
+    return typeof result === "object";
   } catch (e) {
     return false;
   }
 };
 
-const Message = ({ data }) => {  
+const Message = ({ data }) => {
   const containerRef = useRef(null);
   const hostRef = useRef(null);
 
@@ -34,15 +34,15 @@ const Message = ({ data }) => {
 
     if (!containerRef.current) return;
 
-    const host = document.createElement('div');
+    const host = document.createElement("div");
     hostRef.current = host;
-    const shadow = host.attachShadow({ mode: 'open' });
-    
-    const style = document.createElement('style');
+    const shadow = host.attachShadow({ mode: "open" });
+
+    const style = document.createElement("style");
     style.textContent = styles;
 
-    const content = document.createElement('div');
-    content.className = 'content';
+    const content = document.createElement("div");
+    content.className = "content";
     content.innerHTML = data;
 
     shadow.append(style, content);

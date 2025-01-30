@@ -1,4 +1,4 @@
-import { API_ENDPOINTS } from '../constants';
+import { API_ENDPOINTS } from "../constants";
 
 const { BASE_URL, HEALTH } = API_ENDPOINTS;
 
@@ -10,8 +10,7 @@ const handleResponse = async (response) => {
 };
 
 export const api = {
-  checkHealth: () => 
-    fetch(`${BASE_URL}${HEALTH}`).then(handleResponse)
+  checkHealth: () => fetch(`${BASE_URL}${HEALTH}`).then(handleResponse),
 };
 
 export default api;
